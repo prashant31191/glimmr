@@ -40,7 +40,7 @@
         <item name="menuDrawerStyle">@style/MenuDrawerStyle</item>
 
         <!-- Style the dialogs -->
-        <item name="sdlDialogStyle">@style/DialogStyleDark.Custom</item>
+        <!--<item name="sdlDialogStyle">@style/DialogStyleDark.Custom</item>-->
     </style>
 
     <style name="ActionBar.Solid.Glimmrdark" parent="@android:style/Widget.Holo.ActionBar.Solid">
@@ -203,9 +203,10 @@
     </style>
 
     <!-- https://github.com/inmite/android-styled-dialogs -->
-    <style name="DialogStyleDark.Custom">
-        <!-- anything can be left out: -->
-        <item name="titleTextColor">@color/dialog_title_text</item>
+    <!--<style name="DialogStyleDark.Custom">
+        &lt;!&ndash; anything can be left out: &ndash;&gt;
+        &lt;!&ndash;<item name="titleTextColor">@color/dialog_title_text</item>&ndash;&gt;
+
         <item name="titleSeparatorColor">@color/dialog_title_separator</item>
         <item name="messageTextColor">@color/dialog_message_text</item>
         <item name="buttonTextColor">@color/dialog_button_text</item>
@@ -213,6 +214,6 @@
         <item name="buttonBackgroundColorNormal">@color/dialog_button_normal</item>
         <item name="buttonBackgroundColorPressed">@color/dialog_button_pressed</item>
         <item name="buttonBackgroundColorFocused">@color/dialog_button_focused</item>
-        <!--<item name="dialogBackground">@drawable/dialog_background</item>-->
-    </style>
+        &lt;!&ndash;<item name="dialogBackground">@drawable/dialog_background</item>&ndash;&gt;
+    </style>-->
 </resources>

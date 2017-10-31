@@ -1,21 +1,24 @@
-apply plugin: 'android'
-
+apply plugin: 'com.android.application'
 android {
-  compileSdkVersion 21
-  buildToolsVersion "19.1.0"
+  compileSdkVersion 25
+  buildToolsVersion "26.0.0"
 
   defaultConfig {
     minSdkVersion 14
-    targetSdkVersion 21
-    versionCode 41
-    versionName "2.23"
+    targetSdkVersion 22
+    versionCode 1
+    versionName "1.0"
+
+    // Enabling multidex support.
+    multiDexEnabled true
+
   }
 
   lintOptions {
     abortOnError false
   }
 
-  signingConfigs {
+  /*signingConfigs {
     release {
       storeFile file(RELEASE_STORE_FILE)
         storePassword RELEASE_STORE_PASSWORD
@@ -29,14 +32,26 @@ android {
       runProguard false
       signingConfig signingConfigs.release
     }
+  }*/
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
   }
 }
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     compile 'com.googlecode.flickrj-android:flickrj-android:2.1.0'
-    compile 'com.android.support:support-v4:21.0.0'
-    compile 'eu.inmite.android.lib:android-styled-dialogs:1.1.2@aar'
+
+  compile 'com.android.support:support-v4:25.3.0'
+  compile 'com.android.support:appcompat-v7:25.3.0'
+  compile 'com.android.support:cardview-v7:25.3.0'
+
+
+  compile 'eu.inmite.android.lib:android-styled-dialogs:1.1.2@aar'
     compile 'com.viewpagerindicator:library:2.4.1@aar'
     compile 'net.simonvt.menudrawer:menudrawer:3.0.5@aar'
     compile 'com.commonsware.cwac:endless:1.2.3'
@@ -48,8 +63,10 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'org.ocpsoft.prettytime:prettytime:3.2.4.Final'
     compile 'org.slf4j:slf4j-api:1.6.2'
-    compile 'com.android.support:appcompat-v7:21.0.+'
-    compile 'com.android.support:cardview-v7:21.0.+'
+
+
+  // for the multi dex
+  compile 'com.android.support:multidex:1.0.1'
 
     compile('de.keyboardsurfer.android.widget:crouton:1.8.4@aar') {
       exclude group: 'com.google.android', module: 'support-v4'
